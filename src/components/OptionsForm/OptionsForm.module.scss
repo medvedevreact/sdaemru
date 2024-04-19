@@ -1,0 +1,49 @@
+.optionsForm {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid rgb(214, 214, 214);
+  margin-bottom: 50px;
+}
+
+.optionsFormTitle {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  span {
+    color: rgb(101, 101, 255);
+  }
+}
+
+.optionsFormSubtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.optionsFormGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.optionsFormLabel {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.radioLabel {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333;
+}
+.optionsFormItem {
+  display: flex;
+  border: 1px solid rgb(235, 235, 235);
+  padding: 5px;
+  border-radius: 12px;
+  &.active {
+    border-color: rgb(0, 123, 255);
+  }
+}

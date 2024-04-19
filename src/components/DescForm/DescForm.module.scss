@@ -1,0 +1,50 @@
+.formStep {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid rgb(214, 214, 214);
+
+  margin-bottom: 50px;
+}
+
+.formStepTitle {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.formStepInstruction {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.formTextarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  height: 100px;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  &:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+  }
+}
+.blue {
+  color: rgb(96, 96, 252);
+}

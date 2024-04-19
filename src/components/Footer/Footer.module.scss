@@ -1,0 +1,48 @@
+.footer {
+  padding: 20px 40px;
+  height: 175px;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+.black {
+  color: black;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.yellow {
+  color: yellow;
+  font-weight: 600;
+  font-size: 30px;
+}
+.desc {
+  opacity: 0.6;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 15px;
+  list-style-type: none;
+}
+.listElem {
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.logoFooter {
+  margin-bottom: 20px;
+}
+
+.listSocial {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}

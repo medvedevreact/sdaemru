@@ -1,0 +1,38 @@
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  background-color: rgba(103, 70, 199, 0.8);
+  height: 450px;
+  border-radius: 0 0 40px 40px;
+  display: flex;
+  padding-top: 40px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.searchWrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/background.png");
+  background-size: cover;
+  border-radius: 0 0 40px 40px;
+  z-index: -1;
+}
+
+.searchWrapper h2 {
+  color: white;
+  font-size: 32px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.searchWrapper h2 span {
+  color: rgb(255, 230, 0);
+}
+.title {
+  margin-bottom: 50px;
+}

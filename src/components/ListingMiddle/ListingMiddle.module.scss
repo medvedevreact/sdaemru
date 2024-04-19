@@ -1,0 +1,69 @@
+.wrapper {
+  background: white;
+  width: 780px;
+  height: 200px;
+  margin-left: 250px;
+  border-radius: 15px;
+  padding: 20px;
+}
+.descUpper {
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  color: #664ef9;
+}
+.desc {
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+.descUnder {
+  display: flex;
+  justify-content: space-between;
+  &Left {
+    display: flex;
+    gap: 20px;
+  }
+  .fav {
+    display: flex;
+    align-items: center;
+    padding: 7px;
+    border-radius: 12px;
+    border: none;
+    gap: 3px;
+    color: rgb(255, 30, 30);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: rgb(212, 212, 212);
+    }
+  }
+}
+.metro {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  &Text {
+    opacity: 0.7;
+  }
+}
+.pageWrapper {
+  display: flex;
+  gap: 25px;
+}
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  width: 12px;
+  height: 12px;
+  line-height: 20px;
+}
+
+.leaflet-control-zoom-in .leaflet-icon,
+.leaflet-control-zoom-out .leaflet-icon {
+  font-size: 15px;
+}
+.leaflet-touch .leaflet-bar a {
+  width: 12px !important;
+  height: 12px !important;
+}

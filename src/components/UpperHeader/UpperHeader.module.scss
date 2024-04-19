@@ -1,0 +1,17 @@
+.upperHeader {
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  justify-content: space-between;
+  background-color: rgb(238, 238, 238);
+  li {
+    opacity: 0.75;
+    cursor: pointer;
+  }
+}
+.list {
+  display: flex;
+  list-style-type: none;
+  gap: 75px;
+}

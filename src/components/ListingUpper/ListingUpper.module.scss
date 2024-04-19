@@ -1,0 +1,66 @@
+.mainPhoto {
+  width: 70%;
+  height: 400px;
+  background: white;
+}
+.wrapper {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.album {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  list-style-type: none;
+  width: 20%;
+  &Photo {
+    width: 100%px;
+    height: 80px;
+    background: white;
+  }
+}
+.contacts {
+  padding: 20px 0px;
+  width: 20%;
+  height: 400px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .nameTitle {
+    font-size: 18px;
+  }
+  .contactsPhoto {
+    border-radius: 50%;
+    background: rgb(105, 105, 255);
+    width: 75px;
+    height: 75px;
+    margin-bottom: 30px;
+  }
+  .email {
+    margin-bottom: 30px;
+  }
+  .number {
+    margin-bottom: 30px;
+  }
+  .writeBtn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+    color: white;
+    background: #1de81c;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.5s ease all;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background: #17c417;
+    }
+  }
+}

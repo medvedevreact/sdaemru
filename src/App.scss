@@ -1,0 +1,71 @@
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+.header-devider {
+  height: 20px;
+  background-color: rgb(238, 238, 238);
+}
+.pageWrapper {
+  background: rgb(253, 244, 244);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.items-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+.addListingWrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.addListingTitle {
+  display: flex;
+  gap: 50px;
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+.addListingTitleItem {
+  cursor: pointer;
+  padding-bottom: 10px;
+  position: relative;
+  &.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: blue;
+  }
+}
+.addListingContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 150px;
+  &Title {
+    margin-bottom: 10px;
+  }
+  &Text {
+    max-width: 450px;
+  }
+}
+.addListingBtn {
+  padding: 15px 10px;
+  border: none;
+  border-radius: 12px;
+  background-color: rgb(86, 86, 253);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: rgb(72, 72, 214);
+  }
+}
+.addListingNotCompleted {
+  margin-top: 10px;
+  color: red;
+}

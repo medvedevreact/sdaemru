@@ -1,0 +1,15 @@
+.upperMiddle {
+  padding: 0 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  li {
+    cursor: pointer;
+  }
+}
+.list {
+  display: flex;
+  list-style-type: none;
+  gap: 75px;
+  opacity: 0.75;
+}
