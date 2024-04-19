@@ -1,7 +1,5 @@
-import React from "react";
 import { Search } from "../components/Search/Search";
 import { Gallery } from "../components/Gallery/Gallery";
-
 
 export const Home = () => {
   return (

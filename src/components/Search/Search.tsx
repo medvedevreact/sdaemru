@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Search.module.scss";
 import { Tabs } from "../Tabs/Tabs";
 

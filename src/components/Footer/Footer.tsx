@@ -1,4 +1,3 @@
-import React from "react";
 import { FaVk, FaTelegram, FaInstagram, FaYoutube } from "react-icons/fa";
 import styles from "./Footer.module.scss";
 

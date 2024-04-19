@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./UpperMiddle.module.scss";
 
 const buttons = ["Мой профиль", "Добавить объявление"];

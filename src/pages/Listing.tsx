@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ListingUpper } from "../components/ListingUpper/ListingUpper";
 import { useParams } from "react-router-dom";
 import axios from "axios";

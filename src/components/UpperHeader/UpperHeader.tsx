@@ -1,4 +1,3 @@
-import React from "react";
 import { MdPlace } from "react-icons/md";
 import styles from "./UpperHeader.module.scss";
 import { Link } from "react-router-dom";
@@ -21,7 +20,7 @@ export const UpperHeader = () => {
           </li>
         ))}
       </ul>
-      <Link>Вход и регистрация</Link>
+      <Link to="/">Вход и регистрация</Link>
     </div>
   );
 };

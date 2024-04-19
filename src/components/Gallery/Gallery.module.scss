@@ -7,10 +7,36 @@
   padding-left: 0;
   gap: 60px;
   flex-wrap: wrap;
+  @media (max-width: 1060px) {
+    gap: 40px;
+  }
+  @media (max-width: 860px) {
+    gap: 60px;
+    justify-content: center;
+  }
+  @media (max-width: 700px) {
+    gap: 30px;
+  }
 
   li:first-child {
     width: 800px;
     height: 400px;
+    @media (max-width: 1280px) {
+      width: 665px;
+      height: 332px;
+    }
+    @media (max-width: 1060px) {
+      width: 500px;
+      height: 250px;
+    }
+    @media (max-width: 860px) {
+      width: 665px;
+      height: 332px;
+    }
+    @media (max-width: 700px) {
+      width: 85%;
+      height: 200px;
+    }
   }
 }
 
@@ -23,6 +49,22 @@
   border-radius: 15px;
   position: relative;
   margin-left: 0;
+  @media (max-width: 1280px) {
+    width: 300px;
+    height: 200px;
+  }
+  @media (max-width: 1060px) {
+    width: 230px;
+    height: 150px;
+  }
+  @media (max-width: 860px) {
+    width: 300px;
+    height: 200px;
+  }
+  @media (max-width: 700px) {
+    width: 85%;
+    min-height: 120px;
+  }
 }
 .title {
   position: absolute;
@@ -30,6 +72,9 @@
   left: 15px;
   color: rgb(115, 79, 222);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  @media (max-width: 1060px) {
+    font-size: 15px;
+  }
 }
 .name {
   position: absolute;
@@ -37,6 +82,10 @@
   left: 15px;
   color: white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  @media (max-width: 1060px) {
+    font-size: 15px;
+    top: 40px;
+  }
 }
 .icon {
   position: absolute;
@@ -48,6 +97,9 @@
 .wrapper {
   margin-bottom: 60px;
   width: calc(100% - 300px);
+  @media (max-width: 860px) {
+    width: 100%;
+  }
 }
 
 .svgBorder {
@@ -64,6 +116,15 @@
 
 .section {
   display: flex;
+  @media (max-width: 860px) {
+    justify-content: center;
+  }
+}
+
+aside {
+  @media (max-width: 860px) {
+    display: none;
+  }
 }
 .asideList {
   list-style-type: none;

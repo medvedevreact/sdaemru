@@ -39,15 +39,24 @@ header {
     border-radius: 18px;
     transition: 0.3s all ease;
     cursor: pointer;
+    @media (max-width: 1060px) {
+      font-size: 16px;
+    }
   }
 }
 .list {
   display: flex;
   gap: 75px;
   list-style-type: none;
+  @media (max-width: 1060px) {
+    gap: 50px;
+  }
 }
 
 .listItem {
   font-size: 20px;
   cursor: pointer;
+  @media (max-width: 1060px) {
+    font-size: 16px;
+  }
 }

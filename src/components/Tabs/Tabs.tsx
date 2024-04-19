@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Tabs.module.scss";
 import { MdPlace } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -211,7 +211,7 @@ export const Tabs = () => {
             </div>
           </div>
         </div>
-        <p>
+        <p className={styles.onTheMap}>
           На карте <MdPlace />{" "}
         </p>
         <button onClick={showBtn} className={styles.show}>

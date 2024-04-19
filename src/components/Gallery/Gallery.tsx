@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Gallery.module.scss";
 
 import { useNavigate } from "react-router-dom";

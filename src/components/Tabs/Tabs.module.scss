@@ -11,6 +11,9 @@ $border-radius: 10px;
     border-top-right-radius: $border-radius;
   }
   transition: all 0.3s ease;
+  @media (max-width: 700px) {
+    padding: 10px 18px;
+  }
 }
 
 .active {
@@ -18,6 +21,12 @@ $border-radius: 10px;
   color: black;
 }
 .contentWrapper {
+  @media (max-width: 860px) {
+    width: 600px;
+  }
+  @media (max-width: 700px) {
+    width: 500px;
+  }
   display: flex;
   justify-content: space-between;
   padding-right: 20px;
@@ -45,6 +54,12 @@ $border-radius: 10px;
     &:hover {
       background-color: rgb(217, 185, 0);
     }
+    @media (max-width: 700px) {
+      width: 80px;
+      font-size: 12px;
+      height: 30px;
+      padding: 5px;
+    }
   }
 }
 .content {
@@ -53,10 +68,23 @@ $border-radius: 10px;
   justify-content: flex-start;
   gap: 50px;
   padding: 0 25px;
+  @media (max-width: 860px) {
+    gap: 25px;
+  }
+  @media (max-width: 700px) {
+    height: 60px;
+  }
 
   .contentItem {
     padding-right: 50px;
     border-right: 1px solid rgb(179, 179, 179);
+    @media (max-width: 860px) {
+      padding-right: 30px;
+    }
+    @media (max-width: 700px) {
+      padding-right: 23px;
+      font-size: 14px;
+    }
   }
 }
 
@@ -84,6 +112,13 @@ $border-radius: 10px;
   height: 100px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  @media (max-width: 860px) {
+    width: 80px;
+  }
+  @media (max-width: 700px) {
+    width: 65px;
+    height: 75px;
+  }
 
   .popupItem {
     justify-content: center;
@@ -92,6 +127,12 @@ $border-radius: 10px;
     cursor: pointer;
     transition: all 0.5s ease;
     flex-grow: 1;
+    @media (max-width: 860px) {
+      font-size: 14px;
+    }
+    @media (max-width: 700px) {
+      font-size: 12px;
+    }
 
     &:first-child {
       border-top-left-radius: 10px;
@@ -117,6 +158,14 @@ $border-radius: 10px;
   margin-bottom: 12px;
   cursor: pointer;
   width: 125px;
+  @media (max-width: 860px) {
+    width: 100px;
+  }
+  @media (max-width: 700px) {
+    width: 85px;
+    height: 27px;
+    font-size: 12px;
+  }
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -128,6 +177,13 @@ $border-radius: 10px;
 .price {
   width: 70px;
   padding: 8px;
+  @media (max-width: 860px) {
+    width: 50px;
+  }
+  @media (max-width: 700px) {
+    width: 40px;
+    height: 27px;
+  }
   border-radius: 12px;
   border: none;
   background: rgb(241, 241, 241);
@@ -142,4 +198,7 @@ $border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.onTheMap {
+  font-size: 14px;
 }
