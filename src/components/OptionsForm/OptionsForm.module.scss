@@ -4,6 +4,9 @@
   padding: 20px;
   border: 2px solid rgb(214, 214, 214);
   margin-bottom: 50px;
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
 }
 
 .optionsFormTitle {
@@ -37,6 +40,7 @@
   margin-left: 5px;
   font-size: 14px;
   color: #333;
+  font-size: 12px;
 }
 .optionsFormItem {
   display: flex;

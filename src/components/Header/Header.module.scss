@@ -21,6 +21,12 @@ header {
     font-weight: 600;
     font-size: 30px;
     cursor: pointer;
+    @media (max-width: 860px) {
+      font-size: 24px;
+    }
+    @media (max-width: 700px) {
+      font-size: 20px;
+    }
   }
 
   .yellow {
@@ -28,9 +34,17 @@ header {
     font-weight: 600;
     font-size: 30px;
     cursor: pointer;
+    @media (max-width: 860px) {
+      font-size: 24px;
+    }
+    @media (max-width: 700px) {
+      font-size: 20px;
+    }
   }
 
   button {
+    margin-right: 10px;
+    margin-left: 10px;
     padding: 15px;
     border: none;
     font-size: 18px;
@@ -42,6 +56,10 @@ header {
     @media (max-width: 1060px) {
       font-size: 16px;
     }
+    @media (max-width: 700px) {
+      font-size: 12px;
+      padding: 10px;
+    }
   }
 }
 .list {
@@ -51,6 +69,9 @@ header {
   @media (max-width: 1060px) {
     gap: 50px;
   }
+  @media (max-width: 860px) {
+    display: none;
+  }
 }
 
 .listItem {
@@ -58,5 +79,39 @@ header {
   cursor: pointer;
   @media (max-width: 1060px) {
     font-size: 16px;
+  }
+}
+.burgerMenu {
+  display: none;
+  @media (max-width: 860px) {
+    display: block;
+  }
+}
+.mobileMenu {
+  width: 30%;
+  position: absolute;
+  top: 125px;
+  left: -30%;
+
+  background-color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+
+  &.open {
+    left: 0;
+  }
+}
+.mobileMenuItem {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background-color: rgb(229, 228, 228);
   }
 }

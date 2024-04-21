@@ -5,6 +5,9 @@
   border: 2px solid rgb(214, 214, 214);
 
   margin-bottom: 50px;
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
 }
 
 .formStepTitle {

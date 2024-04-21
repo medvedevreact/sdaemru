@@ -4,6 +4,9 @@
   border-radius: 15px;
   padding: 20px;
   margin-bottom: 50px;
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
 
   h3 {
     color: #333;

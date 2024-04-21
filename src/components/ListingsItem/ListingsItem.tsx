@@ -21,7 +21,7 @@ export const ListingsItem: React.FC<ListingsItemType> = ({ item }) => {
   const optionKey = categoryObject[category as keyof typeof categoryObject];
   return (
     <div className={styles.item}>
-      <img className={styles.img} src={item.photo} alt="" />
+      <img className={styles.img} src={item.photo[0]} alt="" />
       <div>
         <div className={styles.content}>
           <div className={styles.contentUpper}>

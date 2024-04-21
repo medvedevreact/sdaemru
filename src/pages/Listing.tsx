@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { ListingUpper } from "../components/ListingUpper/ListingUpper";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { ListingMiddle } from "../components/ListingMiddle/ListingMiddle";
 
 export const Listing = () => {
   const { id } = useParams();
@@ -20,7 +19,6 @@ export const Listing = () => {
         {listing && (
           <>
             <ListingUpper listing={listing} />
-            <ListingMiddle listing={listing} />
           </>
         )}
       </div>

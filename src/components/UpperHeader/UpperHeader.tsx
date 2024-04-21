@@ -20,7 +20,9 @@ export const UpperHeader = () => {
           </li>
         ))}
       </ul>
-      <Link to="/">Вход и регистрация</Link>
+      <Link to="/" className={styles.auth}>
+        Вход и регистрация
+      </Link>
     </div>
   );
 };

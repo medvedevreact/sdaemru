@@ -12,6 +12,9 @@
   @media (max-width: 700px) {
     height: 375px;
   }
+  @media (max-width: 550px) {
+    height: 325px;
+  }
 }
 
 .searchWrapper::after {
@@ -36,6 +39,9 @@
   }
   @media (max-width: 700px) {
     font-size: 20px;
+  }
+  @media (max-width: 550px) {
+    font-size: 16px;
   }
 }
 

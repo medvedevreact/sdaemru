@@ -5,11 +5,16 @@
       "title": "Уютная квартира в центре города",
       "description": "Просторная квартира с современным дизайном и всеми удобствами. Идеально подходит для отдыха и комфортного проживания.",
       "price_per_day": 15000,
-      "location": "Тверской район, Центральный административный округ, Москва, Россия, улица Пушкинская",
+      "location": "Москва, улица Пушкинская, Тверской район, Центральный административный округ, Россия",
       "metro": "Пушкинская",
       "district": "Тверской",
       "rooms": "2",
-      "photo": "../src/img/appart1.jpg",
+      "photo": [
+        "../src/img/appart1img1.jpg",
+        "../src/img/appart1img1.jpg",
+        "../src/img/appart1img1.jpg",
+        "../src/img/appart1img1.jpg"
+      ],
       "owner": {
         "name": "Иван Иванов",
         "phone": "123-456-7890",
@@ -25,7 +30,12 @@
       "metro": "Химки",
       "district": "Центральный",
       "rooms": 2,
-      "photo": "../src/img/appart2.jpg",
+      "photo": [
+        "../src/img/appart2img1.jpg",
+        "../src/img/appart2img1.jpg",
+        "../src/img/appart2img1.jpg",
+        "../src/img/appart2img1.jpg"
+      ],
       "owner": {
         "name": "Петр Петров",
         "phone": "987-654-3210",
@@ -41,7 +51,12 @@
       "metro": "Проспект Вернадского",
       "district": "Тропарево-Никулино",
       "rooms": 3,
-      "photo": "../src/img/appart3.jpg",
+      "photo": [
+        "../src/img/appart3img1.jpg",
+        "../src/img/appart3img1.jpg",
+        "../src/img/appart3img1.jpg",
+        "../src/img/appart3img1.jpg"
+      ],
       "owner": {
         "name": "Анна Сидорова",
         "phone": "555-123-4567",
@@ -59,7 +74,12 @@
       "metro": "Нет метро",
       "district": "Селятино",
       "size": "Medium",
-      "photo": "../src/img/house1.jpg",
+      "photo": [
+        "../src/img/house1img1.jpg",
+        "../src/img/house1img1.jpg",
+        "../src/img/house1img1.jpg",
+        "../src/img/house1img1.jpg"
+      ],
       "owner": {
         "name": "Елена Иванова",
         "phone": "123-456-7890",
@@ -71,11 +91,16 @@
       "title": "Роскошный дом у озера",
       "description": "Элегантный коттедж с собственным пляжем и удивительным видом на озеро. Идеально для отдыха с семьей или друзьями.",
       "price_per_day": 20000,
-      "location": "поселок городского типа Рассудово, Московская область, Россия",
+      "location": "поселок Рассудово, Московская область, Россия",
       "metro": "Нет метро",
       "district": "Рассудово",
       "size": "Large",
-      "photo": "../src/img/house2.jpg",
+      "photo": [
+        "../src/img/house2img1.jpg",
+        "../src/img/house2img1.jpg",
+        "../src/img/house2img1.jpg",
+        "../src/img/house2img1.jpg"
+      ],
       "owner": {
         "name": "Дмитрий Петров",
         "phone": "987-654-3210",
@@ -91,7 +116,12 @@
       "metro": "Нет метро",
       "district": "Деденево",
       "size": "Small",
-      "photo": "../src/img/house3.jpg",
+      "photo": [
+        "../src/img/house3img1.jpg",
+        "../src/img/house3img2.jpeg",
+        "../src/img/house3img3.jpg",
+        "../src/img/house3img4.jpg"
+      ],
       "owner": {
         "name": "Ольга Смирнова",
         "phone": "555-123-4567",
@@ -108,7 +138,12 @@
       "location": "Москва, Россия",
       "metro": "Нет метро",
       "type": "Sedan",
-      "photo": "../src/img/car1.jpeg",
+      "photo": [
+        "../src/img/car1img1.jpeg",
+        "../src/img/car1img1.jpeg",
+        "../src/img/car1img1.jpeg",
+        "../src/img/car1img1.jpeg"
+      ],
       "owner": {
         "name": "Игорь Иванов",
         "phone": "123-456-7890",
@@ -123,7 +158,12 @@
       "location": "Московская область, Россия",
       "metro": "Нет метро",
       "type": "Crossover",
-      "photo": "../src/img/car2.jpg",
+      "photo": [
+        "../src/img/car2img1.jpg",
+        "../src/img/car2img1.jpg",
+        "../src/img/car2img1.jpg",
+        "../src/img/car2img1.jpg"
+      ],
       "owner": {
         "name": "Мария Петрова",
         "phone": "987-654-3210",
@@ -138,7 +178,12 @@
       "location": "Москва, Россия",
       "metro": "Нет метро",
       "type": "Sedan",
-      "photo": "../src/img/car3.jpg",
+      "photo": [
+        "../src/img/car3img1.jpg",
+        "../src/img/car3img1.jpg",
+        "../src/img/car3img1.jpg",
+        "../src/img/car3img1.jpg"
+      ],
       "owner": {
         "name": "Александр Сидоров",
         "phone": "555-123-4567",

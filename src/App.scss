@@ -52,6 +52,19 @@
   &Text {
     max-width: 450px;
   }
+  @media (max-width: 1060px) {
+    gap: 100px;
+  }
+  @media (max-width: 700px) {
+    justify-content: center;
+    gap: 0px;
+  }
+  .addListingContentText,
+  .addListingContentTitle {
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
 }
 .addListingBtn {
   padding: 15px 10px;
