@@ -7,12 +7,23 @@
   @media (max-width: 880px) {
     height: 300px;
   }
+  @media (max-width: 600px) {
+    height: 225px;
+  }
+  @media (max-width: 480px) {
+    height: 180px;
+  }
 }
 
 .MainPhotoAndDesc {
   width: 70%;
   display: flex;
   flex-direction: column;
+  .desc {
+    @media (max-width: 550px) {
+      display: none;
+    }
+  }
 }
 .contactsAndMap {
   width: 20%;
@@ -26,6 +37,14 @@
   @media (max-width: 1024px) {
     gap: 15px;
     justify-content: center;
+  }
+  @media (max-width: 550px) {
+    margin-bottom: 0px;
+    height: 225px;
+  }
+  @media (max-width: 550px) {
+    margin-bottom: 0px;
+    height: 180px;
   }
 }
 .album {
@@ -70,13 +89,25 @@
     height: 300px;
     padding: 15px 0px;
   }
+  @media (max-width: 600px) {
+    height: 225px;
+    padding: 10px 0px;
+  }
+  @media (max-width: 480px) {
+    height: 180px;
+  }
   .nameTitle {
-    font-size: 18px;
+    font-size: 16px;
     @media (max-width: 880px) {
-      font-size: 16px;
+      font-size: 13px;
     }
     @media (max-width: 700px) {
-      font-size: 13px;
+      font-size: 12px;
+    }
+    @media (max-width: 650px) {
+      max-width: 100px;
+      text-align: center;
+      margin-bottom: 5px;
     }
   }
   .contactsPhoto {
@@ -90,15 +121,29 @@
       height: 60px;
       margin-bottom: 15px;
     }
+    @media (max-width: 700px) {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 480px) {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+    }
   }
   .email {
     margin-bottom: 30px;
+    font-size: 14px;
     @media (max-width: 880px) {
       margin-bottom: 15px;
-      font-size: 14px;
+      font-size: 12px;
     }
     @media (max-width: 700px) {
-      font-size: 12px;
+      font-size: 11px;
+    }
+    @media (max-width: 650px) {
+      display: none;
     }
   }
   .number {
@@ -109,6 +154,10 @@
     }
     @media (max-width: 700px) {
       font-size: 12px;
+    }
+    @media (max-width: 480px) {
+      font-size: 10px;
+      margin-bottom: 10px;
     }
   }
   .writeBtn {
@@ -130,29 +179,87 @@
     @media (max-width: 880px) {
       padding: 5px 8px;
     }
+    @media (max-width: 600px) {
+      padding: 3px 5px;
+      font-weight: 400;
+    }
+    @media (max-width: 480px) {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
   }
 }
 .map {
   width: 100%;
   height: 200px;
+  @media (max-width: 860px) {
+    height: 175px;
+  }
+  @media (max-width: 600px) {
+    height: 150px;
+  }
+  @media (max-width: 550px) {
+    display: none;
+  }
 }
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
   width: 12px;
   height: 12px;
   line-height: 20px;
+  @media (max-width: 860px) {
+    width: 10px;
+    height: 10px;
+    line-height: 16px;
+  }
 }
 
-.leaflet-control-zoom-in .leaflet-icon,
-.leaflet-control-zoom-out .leaflet-icon {
+.leaflet-control-zoom-in,
+.leaflet-icon,
+.leaflet-control-zoom-out,
+.leaflet-icon {
   font-size: 15px;
+  @media (max-width: 860px) {
+    font-size: 13px;
+  }
 }
-.leaflet-touch .leaflet-bar a {
-  width: 12px !important;
-  height: 12px !important;
+.leaflet-touch,
+a {
+  @media (max-width: 860px) {
+    width: 20px !important;
+    height: 20px !important;
+    line-height: 20px !important;
+  }
+  span {
+    @media (max-width: 860px) {
+      font-size: 16px;
+    }
+  }
 }
 @media (max-width: 880px) {
   .hideOnMobile {
     display: none;
+  }
+}
+.mapMobile {
+  display: none;
+  @media (max-width: 550px) {
+    display: block;
+    width: 92%;
+    height: 250px;
+  }
+}
+.mobileWrapper {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.descMobile {
+  display: none;
+  width: 92%;
+  @media (max-width: 550px) {
+    display: block;
+    margin-bottom: 20px;
   }
 }

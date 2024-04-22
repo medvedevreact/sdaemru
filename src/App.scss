@@ -2,6 +2,8 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .header-devider {
   height: 20px;
@@ -11,6 +13,7 @@
   background: rgb(253, 244, 244);
   padding-top: 30px;
   padding-bottom: 30px;
+  height: 100vh;
 }
 .items-wrapper {
   display: flex;

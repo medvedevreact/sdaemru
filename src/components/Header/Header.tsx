@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 
 export const Header: React.FC = () => {
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const bodyHeight = document.body.scrollHeight;
+  const navigate = useNavigate();
 
   return (
     <header>
-      <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-        <h2>
-          <span className={styles.black}>SDAEM</span>
-          <span className={styles.yellow}>.RU</span>
-        </h2>
-      </Link>
+      <h2
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        <span className={styles.black}>SDAEM</span>
+        <span className={styles.yellow}>.RU</span>
+      </h2>
 
       <ul
         className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}
