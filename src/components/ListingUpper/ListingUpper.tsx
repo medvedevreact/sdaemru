@@ -73,10 +73,10 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
           ))}
         </ul>
         <div className={styles.MainPhotoAndDesc}>
-          {/* <img
+          <img
             src={`/${listing.photo[mainPhoto]}`}
             className={styles.mainPhoto}
-          ></img> */}
+          ></img>
           <Slider photo={listing.photo} />
           <div className={styles.desc}>
             <ListingDesc listing={listing} />

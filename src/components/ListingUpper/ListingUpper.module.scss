@@ -4,6 +4,9 @@
   background: white;
   cursor: pointer;
   object-fit: cover;
+  @media (max-width: 1024px) {
+    display: none;
+  }
   @media (max-width: 880px) {
     height: 300px;
   }
@@ -185,7 +188,7 @@
       font-weight: 400;
     }
     @media (max-width: 480px) {
-      font-size: 10px;
+      font-size: 8px;
       margin-bottom: 5px;
     }
   }
@@ -262,5 +265,9 @@ a {
   @media (max-width: 550px) {
     display: block;
     margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 0px;
   }
 }
