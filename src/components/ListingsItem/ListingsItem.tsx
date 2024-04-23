@@ -21,7 +21,7 @@ export const ListingsItem: React.FC<ListingsItemType> = ({ item }) => {
   const optionKey = categoryObject[category as keyof typeof categoryObject];
   return (
     <div className={styles.item}>
-      <img className={styles.img} src={item.photo[0]} alt="" />
+      <img className={styles.img} src={`/${item.photo[0]}`} alt="" />
       <div>
         <div className={styles.content}>
           <div className={styles.contentUpper}>
@@ -31,7 +31,7 @@ export const ListingsItem: React.FC<ListingsItemType> = ({ item }) => {
             </div>
 
             <p className={styles.rooms}>
-              {item[optionKey as keyof typeof item]}{" "}
+              {item[optionKey as keyof typeof item] as string}{" "}
               {String(category) === "appartments" ? "комн." : ""}
             </p>
           </div>

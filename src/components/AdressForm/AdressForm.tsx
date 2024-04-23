@@ -32,7 +32,6 @@ export const AdressForm: React.FC<AdressFormProps> = ({
 }) => {
   const [input, setInput] = useState(listingObject.location);
   const [suggestions, setSuggestions] = useState<SuggestionItem[]>([]);
-  console.log(suggestions);
 
   const fetchData = () => {
     if (input.length > 3) {
@@ -59,7 +58,7 @@ export const AdressForm: React.FC<AdressFormProps> = ({
     return () => {
       debouncedFetchData.cancel();
     };
-  }, [input]);
+  }, [input, debouncedFetchData]);
 
   return (
     <form className={styles.formContainer}>

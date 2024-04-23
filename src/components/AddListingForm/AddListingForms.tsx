@@ -14,6 +14,9 @@ interface AddListingFormProps {
   ) => void;
 
   fileInputRef: React.RefObject<HTMLInputElement> | null;
+  secondPhotoRef: React.RefObject<HTMLInputElement> | null;
+  thirdPhotoRef: React.RefObject<HTMLInputElement> | null;
+  fourthPhotoRef: React.RefObject<HTMLInputElement> | null;
 }
 
 export const AddListingForms: React.FC<AddListingFormProps> = ({
@@ -22,7 +25,11 @@ export const AddListingForms: React.FC<AddListingFormProps> = ({
   setListingObject,
 
   fileInputRef,
+  secondPhotoRef,
+  thirdPhotoRef,
+  fourthPhotoRef,
 }) => {
+  console.log(listingObject);
   return (
     <div>
       <div>
@@ -41,6 +48,9 @@ export const AddListingForms: React.FC<AddListingFormProps> = ({
           key={activeCategoryKey + "_photo"}
           listingObject={listingObject}
           setListingObject={setListingObject}
+          secondPhotoRef={secondPhotoRef}
+          thirdPhotoRef={thirdPhotoRef}
+          fourthPhotoRef={fourthPhotoRef}
         />
         <PriceForm
           key={activeCategoryKey + "_price"}

@@ -9,9 +9,11 @@ export const Listing = () => {
 
   const [listing, setListing] = useState(null);
   useEffect(() => {
-    axios.get(`http://localhost:3000/${category}/${id}`).then((resp) => {
-      setListing(resp.data);
-    });
+    axios
+      .get(`https://sdaemrudb.onrender.com/${category}/${id}`)
+      .then((resp) => {
+        setListing(resp.data);
+      });
   }, [id, category]);
   return (
     <div className="pageWrapper">

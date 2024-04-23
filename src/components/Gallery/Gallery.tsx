@@ -6,19 +6,19 @@ const categories = [
   {
     title: "Снять квартиру",
     name: "Квартиры",
-    photo: "src/img/appartment.jpg",
+    photo: "img/appartment.jpg",
     link: "appartments",
   },
   {
     title: "Снять Коттедж",
     name: "Коттеджи",
-    photo: "src/img/house.png",
+    photo: "img/house.png",
     link: "houses",
   },
   {
     title: "Арендовать авто",
     name: "Авто",
-    photo: "src/img/car.jpg",
+    photo: "img/car.jpg",
     link: "auto",
   },
 ];

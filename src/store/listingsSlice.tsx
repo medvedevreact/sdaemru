@@ -22,15 +22,27 @@ export const fetchListings = createAsyncThunk(
     let response;
     if (queryParams) {
       response = await axios.get<AutoItem[] | AppartmentItem[] | HouseItem[]>(
-        `http://localhost:3000/${category}${queryParams}&price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
+        `https://sdaemrudb.onrender.com/${category}${queryParams}&price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
       );
     } else {
       response = await axios.get(
-        `http://localhost:3000/${category}?price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
+        `https://sdaemrudb.onrender.com/${category}?price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
       );
     }
 
     return response.data;
+  }
+);
+export type addListingArg = {
+  category: string;
+  listing: FilterAutoType | FilterHouseType | FilterAppartmentsType;
+};
+
+export const addListing = createAsyncThunk(
+  "listings/addListing",
+  async (params: addListingArg) => {
+    const { category, listing } = params;
+    axios.post(`https://sdaemrudb.onrender.com/${category}`, listing);
   }
 );
 
@@ -84,22 +96,7 @@ export const listingsSlice = createSlice({
     ) {
       state.filter = { [action.payload.key]: action.payload.value };
     },
-    addListing(
-      state,
-      action: PayloadAction<{
-        category: string;
-        listing: FilterAutoType | FilterHouseType | FilterAppartmentsType;
-      }>
-    ) {
-      axios.post(
-        `http://localhost:3000/${action.payload.category}`,
-        action.payload.listing
-      );
-      console.log(
-        `http://localhost:3000/${action.payload.category}`,
-        action.payload.listing
-      );
-    },
+
     setPrice(state, action: PayloadAction<PriceType>) {
       state.price.fromPrice = action.payload.fromPrice;
       state.price.toPrice = action.payload.toPrice;
@@ -111,6 +108,6 @@ export const listingsSlice = createSlice({
     });
   },
 });
-export const { clearListings, setFilter, clearFilter, setPrice, addListing } =
+export const { clearListings, setFilter, clearFilter, setPrice } =
   listingsSlice.actions;
 export default listingsSlice.reducer;

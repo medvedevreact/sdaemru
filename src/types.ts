@@ -7,7 +7,7 @@ export type AppartmentItem = {
   metro: string;
   district: string;
   rooms: string;
-  photo: string;
+  photo: string[];
   owner: {
     name: string;
     phone: string;
@@ -24,7 +24,7 @@ export type HouseItem = {
   metro: string;
   district: string;
   size: string;
-  photo: string;
+  photo: string[];
   owner: {
     name: string;
     phone: string;
@@ -41,7 +41,7 @@ export type AutoItem = {
   metro: string;
   district: string;
   type: string;
-  photo: string;
+  photo: string[];
   owner: {
     name: string;
     phone: string;

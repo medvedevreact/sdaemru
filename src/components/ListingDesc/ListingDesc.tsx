@@ -1,7 +1,12 @@
 import { FaHeart } from "react-icons/fa";
 import styles from "./ListingDesc.module.scss";
+import { AppartmentItem, AutoItem, HouseItem } from "../../types";
 
-export default function ListingDesc({ listing }) {
+interface ListingDescType {
+  listing: AutoItem | HouseItem | AppartmentItem;
+}
+
+export const ListingDesc: React.FC<ListingDescType> = ({ listing }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.descUpper}>
@@ -50,4 +55,4 @@ export default function ListingDesc({ listing }) {
       </div>
     </div>
   );
-}
+};

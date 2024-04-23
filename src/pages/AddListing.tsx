@@ -1,16 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { AddListingForms } from "../components/AddListingForm/AddListingForms";
-import { useDispatch } from "react-redux";
-import { addListing } from "../store/listingsSlice";
+
 import { AppartmentItem } from "../types";
 import { AutoItem } from "../types";
 import { HouseItem } from "../types";
-function hasKey<O extends object>(
-  obj: O,
-  key: keyof string | number | symbol
-): key is keyof O {
-  return key in obj;
-}
+import { addListing } from "../store/listingsSlice";
+import { useAppDispatch } from "../store";
+
 type FormFields = {
   appartments: AppartmentItem;
   houses: HouseItem;
@@ -25,7 +21,7 @@ const formFields: FormFields = {
     metro: "",
     district: "",
     rooms: "",
-    photo: "",
+    photo: ["", "", "", ""],
     owner: {
       name: "",
       phone: "",
@@ -40,7 +36,7 @@ const formFields: FormFields = {
     metro: "",
     district: "",
     size: "",
-    photo: "",
+    photo: ["", "", "", ""],
     owner: {
       name: "",
       phone: "",
@@ -55,7 +51,7 @@ const formFields: FormFields = {
     metro: "",
     district: "",
     type: "",
-    photo: "",
+    photo: ["", "", "", ""],
     owner: {
       name: "",
       phone: "",
@@ -78,13 +74,26 @@ const convertOptions = {
 
 export const AddListing = () => {
   const [activeCategory, setActiveCategory] = useState("Квартиры");
-  const dispatch = useDispatch();
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const resetFileInput = () => {
+  const dispatch = useAppDispatch();
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const resetFileInputs = () => {
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
     }
+    if (secondPhotoRef.current) {
+      secondPhotoRef.current.value = "";
+    }
+    if (thirdPhotoRef.current) {
+      thirdPhotoRef.current.value = "";
+    }
+    if (fourthPhotoRef.current) {
+      fourthPhotoRef.current.value = "";
+    }
   };
+  const secondPhotoRef = useRef<HTMLInputElement | null>(null);
+  const thirdPhotoRef = useRef<HTMLInputElement | null>(null);
+  const fourthPhotoRef = useRef<HTMLInputElement | null>(null);
+
   const [showMessage, setShowMessage] = useState(false);
 
   const activeCategoryKey = Object.keys(convertNamesObj).find(
@@ -96,15 +105,16 @@ export const AddListing = () => {
   );
   const option = convertOptions[activeCategoryKey];
 
+  const allPhotos = listingObject.photo.every((el) => el !== "");
+
   const handleClick = () => {
     if (
       listingObject.location !== "" &&
       listingObject.description !== "" &&
-      listingObject.photo !== "" &&
+      allPhotos &&
       listingObject.price_per_day !== 0 &&
       option &&
-      hasKey(listingObject, option) &&
-      listingObject[option] !== ""
+      listingObject[option as keyof typeof listingObject] !== ""
     ) {
       dispatch(
         addListing({
@@ -113,7 +123,7 @@ export const AddListing = () => {
         })
       );
       setListingObject(formFields[activeCategoryKey]);
-      resetFileInput();
+      resetFileInputs();
     } else {
       setShowMessage(true);
     }
@@ -138,6 +148,7 @@ export const AddListing = () => {
               key={key}
               onClick={() => {
                 setActiveCategory(value);
+                setListingObject(formFields[activeCategoryKey]);
               }}
               className={`addListingTitleItem ${
                 activeCategory === value ? "active" : ""
@@ -171,6 +182,9 @@ export const AddListing = () => {
               activeCategoryKey={activeCategoryKey}
               listingObject={listingObject}
               setListingObject={setListingObject}
+              secondPhotoRef={secondPhotoRef}
+              thirdPhotoRef={thirdPhotoRef}
+              fourthPhotoRef={fourthPhotoRef}
             />
             <button className="addListingBtn" onClick={handleClick}>
               Добавить Объявление

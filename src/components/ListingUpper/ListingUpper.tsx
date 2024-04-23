@@ -4,8 +4,10 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { AppartmentItem, AutoItem, HouseItem } from "../../types";
-import ListingDesc from "../ListingDesc/ListingDesc";
+import { ListingDesc } from "../ListingDesc/ListingDesc";
 import axios from "axios";
+import { LatLngExpression } from "leaflet";
+import L from "leaflet";
 
 interface ListingUpperType {
   listing: AutoItem | AppartmentItem | HouseItem;
@@ -16,7 +18,15 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
   const [coordinates, setCoordinates] = useState<{
     lat: string | number;
     lon: string | number;
-  } | null>(null);
+  }>({ lat: "", lon: "" });
+
+  const customIcon = new L.Icon({
+    iconUrl:
+      "https://www.laverielavandiere.fr/wp-content/uploads/2015/11/location.png",
+    iconSize: [25, 25],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  });
 
   useEffect(() => {
     const fetchCoordinates = async () => {
@@ -40,9 +50,10 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
     }
   }, [listing.location]);
 
-  const position = coordinates
-    ? [parseFloat(String(coordinates.lat)), parseFloat(String(coordinates.lon))]
-    : null;
+  const position: LatLngExpression = [
+    parseFloat(coordinates.lat.toString()),
+    parseFloat(coordinates.lon.toString()),
+  ];
 
   return (
     <div className={styles.mobileWrapper}>
@@ -56,13 +67,13 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
               }`}
               onClick={() => setMainPhoto(index)}
             >
-              <img src={`../${photo}`} alt={`Photo ${index + 1}`} />
+              <img src={`/${photo}`} alt={`Photo ${index + 1}`} />
             </li>
           ))}
         </ul>
         <div className={styles.MainPhotoAndDesc}>
           <img
-            src={`../${listing.photo[mainPhoto]}`}
+            src={`/${listing.photo[mainPhoto]}`}
             className={styles.mainPhoto}
           ></img>
           <div className={styles.desc}>
@@ -95,18 +106,18 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
               <FaWhatsapp />
             </button>
           </div>
-          {coordinates && position && (
+          {coordinates.lat && coordinates.lon && position && (
             <MapContainer
               center={position}
               zoom={13}
               scrollWheelZoom={false}
               className={styles.map}
             >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker position={[coordinates.lat, coordinates.lon]}>
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <Marker
+                position={[Number(coordinates.lat), Number(coordinates.lon)]}
+                icon={customIcon}
+              >
                 <Popup>{listing.title} находится здесь.</Popup>
               </Marker>
             </MapContainer>
@@ -117,18 +128,18 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
         <ListingDesc listing={listing} />
       </div>
 
-      {coordinates && position && (
+      {coordinates.lat && coordinates.lon && position && (
         <MapContainer
           center={position}
           zoom={13}
           scrollWheelZoom={false}
           className={styles.mapMobile}
         >
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          />
-          <Marker position={[coordinates.lat, coordinates.lon]}>
+          <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <Marker
+            position={[Number(coordinates.lat), Number(coordinates.lon)]}
+            icon={customIcon}
+          >
             <Popup>{listing.title} находится здесь.</Popup>
           </Marker>
         </MapContainer>

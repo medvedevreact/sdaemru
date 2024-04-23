@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ListingsTitle.module.scss";
 
 import { setFilter } from "../../store/listingsSlice";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch } from "../../store";
 
 interface FilterInfo {
   [key: string]: {
@@ -81,8 +81,6 @@ interface ListingsTitleType {
 }
 
 export const ListingsTitle: React.FC<ListingsTitleType> = ({ category }) => {
-  const filterOptions = useAppSelector((state) => state.listings.filter);
-
   const dispatch = useAppDispatch();
   const categoryObject = filterInfo[category as keyof typeof filterInfo];
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { ListingsTitle } from "../components/ListingsTitle/ListingsTitle";
 import { useParams } from "react-router-dom";
 import { clearFilter, fetchListings } from "../store/listingsSlice";
@@ -17,20 +17,19 @@ export const Listings = () => {
 
   const dispatch = useAppDispatch();
 
-  const getListings = () => {
-    dispatch(
-      fetchListings({
-        category,
-        filter: filterOptions,
-        fromPrice: fromPrice,
-        toPrice: toPrice,
-      })
-    );
-  };
-
   useEffect(() => {
+    const getListings = () => {
+      dispatch(
+        fetchListings({
+          category,
+          filter: filterOptions,
+          fromPrice: fromPrice,
+          toPrice: toPrice,
+        })
+      );
+    };
     getListings();
-  }, [filterOptions]);
+  }, [filterOptions, category, dispatch, fromPrice, toPrice]);
 
   useUnmount(() => {
     dispatch(clearFilter());

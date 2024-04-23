@@ -3,11 +3,43 @@ import styles from "./Tabs.module.scss";
 import { MdPlace } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { setFilter, setPrice } from "../../store/listingsSlice";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppDispatch } from "../../store";
 
 const categories = ["Квартиры", "Коттеджи", "Авто"];
 
-const filterCriterias = [
+type filterCriteriasType = [
+  {
+    name: string;
+    url: string;
+    filterName: string;
+    key: "rooms" | "size" | "type";
+    array: [
+      { name: string; value: number },
+      { name: string; value: number },
+      { name: string; value: number }
+    ];
+  },
+  {
+    name: string;
+    url: string;
+    filterName: string;
+    key: "rooms" | "size" | "type";
+    array: [
+      { name: string; value: string },
+      { name: string; value: string },
+      { name: string; value: string }
+    ];
+  },
+  {
+    name: string;
+    url: string;
+    filterName: string;
+    key: "rooms" | "size" | "type";
+    array: [{ name: string; value: string }, { name: string; value: string }];
+  }
+];
+
+const filterCriterias: filterCriteriasType = [
   {
     name: "Квартиры",
     url: "/appartments",
@@ -75,7 +107,7 @@ export const Tabs = () => {
   const [selectedFilter, setSelectedFilter] = useState("");
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const navigate = useNavigate();
-  const filter = useAppSelector((state) => state.listings.filter);
+
   const dispatch = useAppDispatch();
   const activeCategoryObject = filterCriterias.find(
     (category) => category.name === activeCategory
@@ -94,7 +126,10 @@ export const Tabs = () => {
 
       if (value !== undefined) {
         dispatch(
-          setFilter({ key: activeCategoryObject.key, value: String(value) })
+          setFilter({
+            key: activeCategoryObject.key,
+            value: String(value),
+          })
         );
       }
     }
