@@ -23,15 +23,45 @@ export const Header: React.FC = () => {
         className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}
         style={{ height: `${bodyHeight - 125}px` }}
       >
-        <li className={styles.mobileMenuItem}>Квартиры</li>
-        <li className={styles.mobileMenuItem}>Коттеджи</li>
-        <li className={styles.mobileMenuItem}>Авто</li>
+        <li
+          className={styles.mobileMenuItem}
+          onClick={() => navigate("/listings/appartments")}
+        >
+          Квартиры
+        </li>
+        <li
+          className={styles.mobileMenuItem}
+          onClick={() => navigate("/listings/houses")}
+        >
+          Коттеджи
+        </li>
+        <li
+          className={styles.mobileMenuItem}
+          onClick={() => navigate("/listings/auto")}
+        >
+          Авто
+        </li>
       </ul>
 
       <ul className={styles.list}>
-        <li className={styles.listItem}>Квартиры</li>
-        <li className={styles.listItem}>Коттеджи</li>
-        <li className={styles.listItem}>Авто</li>
+        <li
+          className={styles.listItem}
+          onClick={() => navigate("/listings/appartments")}
+        >
+          Квартиры
+        </li>
+        <li
+          className={styles.listItem}
+          onClick={() => navigate("/listings/houses")}
+        >
+          Коттеджи
+        </li>
+        <li
+          className={styles.listItem}
+          onClick={() => navigate("/listings/auto")}
+        >
+          Авто
+        </li>
       </ul>
       <button onClick={() => navigate("/addListing")}>
         + Разместить объявление

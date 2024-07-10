@@ -39,7 +39,13 @@ export const Listings = () => {
     <div>
       <ListingsTitle category={safeCategory} />
       <div className="pageWrapper">
-        {listings.length > 0 && <ListingsItems items={listings} />}
+        {listings.length > 0 ? (
+          <ListingsItems items={listings} />
+        ) : (
+          <div className="container">
+            <p>Идёт загрузка объявлений, нужно подождать...</p>
+          </div>
+        )}
       </div>
     </div>
   );
