@@ -44,10 +44,11 @@
 }
 .desc {
   max-width: 500px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+
   @media (max-width: 880px) {
     max-width: 300px;
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 15px;
   }
   @media (max-width: 860px) {

@@ -16,12 +16,31 @@ export const DescForm: React.FC<DescFormType> = ({
   return (
     <div className={styles.formStep}>
       <h3 className={styles.formStepTitle}>
-        2 шаг: <span className={styles.blue}>Добавление описания</span>
+        2 шаг:{" "}
+        <span className={styles.blue}>Добавление названия и описания</span>
       </h3>
       <p className={styles.formStepInstruction}>
         Добавьте подробное описание, укажите конкурентные преимущества,
         оказываемые дополнительные услуги и т.д.
       </p>
+      <div className={styles.formGroup}>
+        <label htmlFor="title" className={styles.formLabel}>
+          Название
+        </label>
+        <input
+          type="text"
+          id="title"
+          className={styles.formInput}
+          placeholder="Введите название"
+          value={listingObject.title || ""}
+          onChange={(e) =>
+            setListingObject({
+              ...listingObject,
+              title: e.target.value,
+            })
+          }
+        />
+      </div>
       <div className={styles.formGroup}>
         <label htmlFor="description" className={styles.formLabel}>
           Описание
@@ -29,7 +48,7 @@ export const DescForm: React.FC<DescFormType> = ({
         <textarea
           id="description"
           className={styles.formTextarea}
-          placeholder="Введите"
+          placeholder="Введите описание"
           value={listingObject.description}
           onChange={(e) =>
             setListingObject({

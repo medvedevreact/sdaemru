@@ -8,7 +8,7 @@ export const UpperMiddle = () => {
 
   const handleButtonClick = (button: string) => {
     if (button === "Добавить объявление") {
-      navigate("addListing");
+      navigate("/addListing");
     }
   };
 

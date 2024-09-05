@@ -30,14 +30,16 @@ export const Slider: React.FC<SliderType> = ({ photo }) => {
         className={styles.prevBtn}
         disabled={isPrevDisabled ? false : true}
         onClick={prevPhoto}
+        aria-label="previous"
       >
         <MdArrowBack />
       </button>
-      <img src={`/${photo[activePhotoIndex]}`} alt="" />
+      <img src={`/${photo[activePhotoIndex]}`} alt="photo" />
       <button
         className={styles.nextBtn}
         onClick={nextPhoto}
         disabled={isNextDisabled ? false : true}
+        aria-label="next"
       >
         <MdArrowForward />
       </button>

@@ -55,6 +55,7 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
     parseFloat(coordinates.lat.toString()),
     parseFloat(coordinates.lon.toString()),
   ];
+  console.log(coordinates.lat, coordinates.lon);
 
   return (
     <div className={styles.mobileWrapper}>

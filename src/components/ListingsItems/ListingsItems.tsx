@@ -13,7 +13,9 @@ export const ListingsItems: React.FC<ListingsItemsType> = ({ items }) => {
       <h2 className={styles.title}>Найдено {items.length} результата</h2>
       <ul className={styles.list}>
         {items.map((item: AutoItem | HouseItem | AppartmentItem) => (
-          <ListingsItem item={item} />
+          <li>
+            <ListingsItem item={item} />
+          </li>
         ))}
       </ul>
     </div>

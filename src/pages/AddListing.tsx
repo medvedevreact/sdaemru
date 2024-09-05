@@ -114,7 +114,9 @@ export const AddListing = () => {
       allPhotos &&
       listingObject.price_per_day !== 0 &&
       option &&
-      listingObject[option as keyof typeof listingObject] !== ""
+      listingObject[option as keyof typeof listingObject] !== "" &&
+      listingObject.metro !== "" &&
+      listingObject.title !== ""
     ) {
       dispatch(
         addListing({
@@ -166,7 +168,7 @@ export const AddListing = () => {
             <p className="addListingContentText">
               1. Введите адрес объекта, который вы собираетесь сдавать в аренду.
               <br></br>
-              2. Укажите описание.
+              2. Укажите название и описание.
               <br></br>
               3. Добавьте фотографии.
               <br></br>

@@ -231,6 +231,7 @@ export const Tabs = () => {
                 name=""
                 id=""
                 value={fromPrice}
+                aria-label="from"
               />
               <span>-</span>
               <input
@@ -242,6 +243,7 @@ export const Tabs = () => {
                 name=""
                 id=""
                 value={toPrice}
+                aria-label="to"
               />
             </div>
           </div>

@@ -74,6 +74,7 @@ export const PhotoForm: React.FC<PhotoFormType> = ({
           type="file"
           ref={fileInputRef}
           onChange={handleMainPhotoUpload}
+          aria-label="Главная фотография"
         />
         {mainPhoto && <img src={mainPhoto} alt="Main" />}
       </div>
