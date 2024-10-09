@@ -86,6 +86,7 @@ export const PhotoForm: React.FC<PhotoFormType> = ({
               type="file"
               onChange={(e) => handleAdditionalPhotoUpload(e, index)}
               ref={refs[index]}
+              role="additional-photos"
             />
             {additionalPhotos[index] && (
               <img

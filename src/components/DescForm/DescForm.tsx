@@ -13,6 +13,7 @@ export const DescForm: React.FC<DescFormType> = ({
   listingObject,
   setListingObject,
 }) => {
+  console.log(listingObject);
   return (
     <div className={styles.formStep}>
       <h3 className={styles.formStepTitle}>

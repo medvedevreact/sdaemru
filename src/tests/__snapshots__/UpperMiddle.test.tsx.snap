@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`upper middle component render 1`] = `
+[
+  <li>
+    Мой профиль
+  </li>,
+  <li>
+    Добавить объявление
+  </li>,
+]
+`;

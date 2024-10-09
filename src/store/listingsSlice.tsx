@@ -22,11 +22,13 @@ export const fetchListings = createAsyncThunk(
     let response;
     if (queryParams) {
       response = await axios.get<AutoItem[] | AppartmentItem[] | HouseItem[]>(
-        `http://localhost:8080/api/${category}${queryParams}&price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
+        `
+https://sdaemrudb.onrender.com/${category}${queryParams}&price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
       );
     } else {
       response = await axios.get(
-        `http://localhost:8080/api/${category}?price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
+        `
+https://sdaemrudb.onrender.com/${category}?price_per_day_gte=${fromPrice}&price_per_day_lte=${toPrice}`
       );
     }
 

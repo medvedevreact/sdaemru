@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { ListingsItems } from "../components/ListingsItems/ListingsItems";
 import { AutoItem } from "../types";
 import "@testing-library/jest-dom";
-import { BrowserRouter } from "react-router-dom";
+
+import { renderWithRouter } from "../utils/testing";
 
 const items: AutoItem[] = [
   {
@@ -40,20 +41,12 @@ const items: AutoItem[] = [
 ];
 
 test("Компонент рендерится правильно и отображает правильное количество результатов", () => {
-  render(
-    <BrowserRouter>
-      <ListingsItems items={items} />
-    </BrowserRouter>
-  );
+  renderWithRouter(<ListingsItems items={items} />);
   expect(screen.getByText("Найдено 2 результата")).toBeInTheDocument();
 });
 
 test("Компонент рендерит правильное количество элементов", () => {
-  render(
-    <BrowserRouter>
-      <ListingsItems items={items} />
-    </BrowserRouter>
-  );
+  renderWithRouter(<ListingsItems items={items} />);
   const listItems = screen.getAllByRole("listitem");
   expect(listItems.length).toBe(2);
 });

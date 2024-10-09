@@ -29,7 +29,6 @@ export const AddListingForms: React.FC<AddListingFormProps> = ({
   thirdPhotoRef,
   fourthPhotoRef,
 }) => {
-  console.log(listingObject);
   return (
     <div>
       <div>

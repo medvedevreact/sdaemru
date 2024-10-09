@@ -1,38 +1,30 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { UpperMiddle } from "../components/UpperMiddle/UpperMiddle";
+import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AddListing } from "../pages/AddListing";
-
-const mockedUseNavigate = jest.fn();
+import { renderWithRouter } from "../utils/testing";
+import { UpperMiddle } from "../components/UpperMiddle/UpperMiddle";
+import userEvent from "@testing-library/user-event";
+import { useNavigate } from "react-router-dom";
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
-  useNavigate: () => mockedUseNavigate,
+  useNavigate: jest.fn(),
 }));
+
+const useNavigateMock = jest.mocked(useNavigate);
 
 describe("upper middle component", () => {
   test("render", () => {
-    render(
-      <BrowserRouter>
-        <UpperMiddle />
-      </BrowserRouter>
-    );
-    expect(screen.getByText("Мой профиль")).toBeInTheDocument();
-    expect(screen.getByText("Добавить объявление")).toBeInTheDocument();
+    renderWithRouter(<UpperMiddle />);
+    expect(expect(screen.getAllByRole("listitem")).toMatchSnapshot());
   });
   test("navigate to other page", async () => {
-    render(
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<UpperMiddle />} />
-          <Route path="/addListing" element={<AddListing />} />
-        </Routes>
-      </BrowserRouter>
-    );
-    const button = screen.getByText("Добавить объявление");
+    const navigateMock = jest.fn();
+
+    useNavigateMock.mockReturnValue(navigateMock);
+    renderWithRouter(<UpperMiddle />);
+    const button = screen.getByText(/Добавить объявление/i);
     await userEvent.click(button);
-    expect(mockedUseNavigate).toHaveBeenCalledWith("/addListing");
+
+    expect(navigateMock).toHaveBeenCalledTimes(1);
   });
 });

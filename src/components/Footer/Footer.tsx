@@ -5,7 +5,7 @@ const categories = ["Квартиры", "Коттеджи", "Авто"];
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} role="footer">
       <div>
         <h2 className={styles.logoFooter}>
           <span className={styles.black}>SDAEM</span>

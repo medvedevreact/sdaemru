@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`desc component render 1`] = `
+<div
+  class="section"
+  role="gallery"
+>
+  <div
+    class="wrapper"
+  >
+    <ul
+      class="categoryCarts"
+    >
+      <li
+        class="categoryCart"
+        role="img"
+        style="background-image: url(img/appartment.jpg);"
+      >
+        <div
+          class="content"
+        >
+          <h3
+            class="title"
+          >
+            Снять квартиру
+          </h3>
+          <h2
+            class="name"
+          >
+            Квартиры
+          </h2>
+          <div
+            class="svgBorder"
+          >
+            <svg
+              class="icon"
+              height="15px"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              width="15px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="#ffffff"
+              />
+            </svg>
+          </div>
+        </div>
+      </li>
+      <li
+        class="categoryCart"
+        role="img"
+        style="background-image: url(img/house.png);"
+      >
+        <div
+          class="content"
+        >
+          <h3
+            class="title"
+          >
+            Снять Коттедж
+          </h3>
+          <h2
+            class="name"
+          >
+            Коттеджи
+          </h2>
+          <div
+            class="svgBorder"
+          >
+            <svg
+              class="icon"
+              height="15px"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              width="15px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="#ffffff"
+              />
+            </svg>
+          </div>
+        </div>
+      </li>
+      <li
+        class="categoryCart"
+        role="img"
+        style="background-image: url(img/car.jpg);"
+      >
+        <div
+          class="content"
+        >
+          <h3
+            class="title"
+          >
+            Арендовать авто
+          </h3>
+          <h2
+            class="name"
+          >
+            Авто
+          </h2>
+          <div
+            class="svgBorder"
+          >
+            <svg
+              class="icon"
+              height="15px"
+              version="1.1"
+              viewBox="0 0 1024 1024"
+              width="15px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+                fill="#ffffff"
+              />
+            </svg>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <aside>
+    <div>
+      <h2
+        class="asideTitle"
+      >
+         Квартиры
+      </h2>
+      <ul
+        class="asideList"
+      >
+        <li
+          class="asideLi"
+        >
+          Однокомнатные квартиры
+        </li>
+        <li
+          class="asideLi"
+        >
+          Двухкомнатные квартиры
+        </li>
+        <li
+          class="asideLi"
+        >
+          Трёхкомнатные квартиры
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2
+        class="asideTitle"
+      >
+        Коттеджи
+      </h2>
+      <ul
+        class="asideList"
+      >
+        <li
+          class="asideLi"
+        >
+          Малые коттеджи
+        </li>
+        <li
+          class="asideLi"
+        >
+          Средние коттеджи
+        </li>
+        <li
+          class="asideLi"
+        >
+          Большие коттеджи
+        </li>
+      </ul>
+    </div>
+  </aside>
+</div>
+`;

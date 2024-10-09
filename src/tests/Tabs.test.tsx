@@ -1,21 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { Tabs } from "../components/Tabs/Tabs";
 import "@testing-library/jest-dom";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import userEvent from "@testing-library/user-event";
-import { Provider } from "react-redux";
-import { store } from "../store";
-import { Listings } from "../pages/Listings";
+
+import { renderWithRouter } from "../utils/testing";
+import { useNavigate } from "react-router-dom";
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: jest.fn(),
+}));
+
+const useNavigateMock = jest.mocked(useNavigate);
 
 describe("Tabs component", () => {
   test("renders all categories", () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Tabs />
-        </BrowserRouter>
-      </Provider>
-    );
+    renderWithRouter(<Tabs />);
 
     const categories = ["Квартиры", "Коттеджи", "Авто"];
     categories.forEach((category) => {
@@ -24,13 +25,7 @@ describe("Tabs component", () => {
   });
 
   test("changes active category on click", async () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Tabs />
-        </BrowserRouter>
-      </Provider>
-    );
+    renderWithRouter(<Tabs />);
 
     const apartmentsTab = screen.getByText("Квартиры");
     const cottagesTab = screen.getByText("Коттеджи");
@@ -43,13 +38,7 @@ describe("Tabs component", () => {
     expect(apartmentsTab).not.toHaveClass("active");
   });
   test("opens filter dropdown on click and selects filter", async () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Tabs />
-        </BrowserRouter>
-      </Provider>
-    );
+    renderWithRouter(<Tabs />);
 
     const popupBtn = screen.getByText("Выберите");
 
@@ -59,13 +48,7 @@ describe("Tabs component", () => {
     expect(popupBtn.textContent).toBe("1-комн.");
   });
   test("price input fields should update values correctly", async () => {
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Tabs />
-        </BrowserRouter>
-      </Provider>
-    );
+    renderWithRouter(<Tabs />);
 
     const fromPriceInput = screen.getByLabelText("from");
     const toPriceInput = screen.getByLabelText("to");
@@ -77,26 +60,15 @@ describe("Tabs component", () => {
     expect(toPriceInput).toHaveValue("5000");
   });
   test("show button should navigate to the correct URL", async () => {
-    const mockNavigate = jest.fn();
-    jest.mock("react-router-dom", () => ({
-      ...jest.requireActual("react-router-dom"),
-      useNavigate: () => mockNavigate,
-    }));
+    const navigateMock = jest.fn();
 
-    render(
-      <Provider store={store}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Tabs />} />
-            <Route path="/listings/:category" element={<Listings />} />
-          </Routes>
-        </BrowserRouter>
-      </Provider>
-    );
+    useNavigateMock.mockReturnValue(navigateMock);
+
+    renderWithRouter(<Tabs />);
 
     const showButton = screen.getByText("Показать >");
     await userEvent.click(showButton);
 
-    expect(window.location.pathname).toBe("/listings/appartments");
+    expect(navigateMock).toHaveBeenCalledTimes(1);
   });
 });

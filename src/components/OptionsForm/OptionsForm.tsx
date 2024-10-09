@@ -106,6 +106,7 @@ export const OptionsForm: React.FC<OptionsFormType> = ({
           >
             <input
               type="radio"
+              data-testid={`${index + 1}`}
               name="categoryOption"
               className={styles.optionsFormInput}
               checked={selectedValue === item.value}

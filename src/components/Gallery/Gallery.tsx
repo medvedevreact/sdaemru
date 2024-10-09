@@ -26,11 +26,12 @@ const categories = [
 export const Gallery = () => {
   const navigate = useNavigate();
   return (
-    <div className={styles.section}>
+    <div className={styles.section} role="gallery">
       <div className={styles.wrapper}>
         <ul className={styles.categoryCarts}>
           {categories.map((el) => (
             <li
+              role="img"
               className={styles.categoryCart}
               key={el.name}
               style={{ backgroundImage: `url(${el.photo})` }}

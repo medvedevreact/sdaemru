@@ -1,12 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { PriceForm } from "../components/PriceForm/PriceForm";
 import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
 
 const mockListingObject = {
   id: "1",
   title: "Апартаменты в центре",
   description: "Просторные апартаменты в центре города",
-  price_per_day: 1200,
+  price_per_day: 0,
   location: "Центр города",
   metro: "Станция метро",
   district: "Центральный",
@@ -49,12 +50,17 @@ describe("PriceForm", () => {
     ).toBeInTheDocument();
   });
 
-  test("изменение значений", () => {
+  test("изменение значений", async () => {
     render(
       <PriceForm
         listingObject={mockListingObject}
         setListingObject={mockSetListingObject}
       />
     );
+
+    const input = screen.getByPlaceholderText("Цена");
+    await userEvent.type(input, "1500");
+
+    expect(mockSetListingObject).toHaveBeenCalledTimes(4);
   });
 });

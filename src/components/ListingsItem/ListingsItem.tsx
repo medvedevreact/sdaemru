@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ListingsItem.module.scss";
 import { MdPlace } from "react-icons/md";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { AppartmentItem, AutoItem, HouseItem } from "../../types";
 
 interface ListingsItemType {
@@ -18,9 +18,11 @@ export const ListingsItem: React.FC<ListingsItemType> = ({ item }) => {
   const { category } = useParams();
   console.log(category);
   const location = useLocation();
+  const navigate = useNavigate();
+
   const optionKey = categoryObject[category as keyof typeof categoryObject];
   return (
-    <div className={styles.item}>
+    <div className={styles.item} role="article">
       <img className={styles.img} src={`/${item.photo[0]}`} alt="" />
       <div>
         <div className={styles.content}>
@@ -39,9 +41,15 @@ export const ListingsItem: React.FC<ListingsItemType> = ({ item }) => {
             <MdPlace /> {item.location}
           </p>
           <p className={styles.description}>{item.description}</p>
-          <Link to={`${location.pathname}/${item.id}`}>
-            <button className={styles.moreBtn}>Подробнее</button>
-          </Link>
+
+          <button
+            className={styles.moreBtn}
+            onClick={() => {
+              navigate(`${location.pathname}/${item.id}`);
+            }}
+          >
+            Подробнее
+          </button>
         </div>
       </div>
     </div>

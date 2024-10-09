@@ -14,6 +14,7 @@ export const PriceForm: React.FC<PriceFormType> = ({
   listingObject,
   setListingObject,
 }) => {
+  console.log(listingObject, "listobj");
   return (
     <div className={styles.formStep}>
       <h3 className={styles.formStepTitle}>

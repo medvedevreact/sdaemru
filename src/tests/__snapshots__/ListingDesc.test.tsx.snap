@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`desc component render 1`] = `
+<div
+  class="descUpper"
+  role="desc"
+>
+  <h2>
+    Toyota Prius
+  </h2>
+  <div>
+    <h2
+      class="price"
+    >
+      1500
+       Р
+    </h2>
+    <p>
+      за сутки
+    </p>
+  </div>
+</div>
+`;

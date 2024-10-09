@@ -308,6 +308,7 @@ export const AdressForm: React.FC<AdressFormProps> = ({
         </ul>
       )}
       <select
+        role="select"
         value={selectedMetroStation}
         onChange={(e) => {
           setSelectedMetroStation(e.target.value);

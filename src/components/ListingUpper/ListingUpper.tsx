@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ListingUpper.module.scss";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { FaWhatsapp } from "react-icons/fa";
 import { AppartmentItem, AutoItem, HouseItem } from "../../types";
@@ -58,7 +58,7 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
   console.log(coordinates.lat, coordinates.lon);
 
   return (
-    <div className={styles.mobileWrapper}>
+    <div className={styles.mobileWrapper} role="listing-card">
       <div className={styles.wrapper}>
         <ul className={styles.album}>
           {listing.photo.map((photo, index) => (
@@ -115,14 +115,13 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
               zoom={13}
               scrollWheelZoom={false}
               className={styles.map}
+              data-testid="map"
             >
               <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
               <Marker
                 position={[Number(coordinates.lat), Number(coordinates.lon)]}
                 icon={customIcon}
-              >
-                <Popup>{listing.title} находится здесь.</Popup>
-              </Marker>
+              ></Marker>
             </MapContainer>
           )}
         </div>
@@ -133,6 +132,7 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
 
       {coordinates.lat && coordinates.lon && position && (
         <MapContainer
+          data-testid="map"
           center={position}
           zoom={13}
           scrollWheelZoom={false}
@@ -142,9 +142,7 @@ export const ListingUpper: React.FC<ListingUpperType> = ({ listing }) => {
           <Marker
             position={[Number(coordinates.lat), Number(coordinates.lon)]}
             icon={customIcon}
-          >
-            <Popup>{listing.title} находится здесь.</Popup>
-          </Marker>
+          ></Marker>
         </MapContainer>
       )}
     </div>

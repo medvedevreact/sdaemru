@@ -9,7 +9,7 @@ interface ListingDescType {
 export const ListingDesc: React.FC<ListingDescType> = ({ listing }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.descUpper}>
+      <div className={styles.descUpper} role="desc">
         <h2>{listing.title}</h2>
         <div>
           <h2 className={styles.price}>{listing.price_per_day} Р</h2>

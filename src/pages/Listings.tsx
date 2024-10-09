@@ -43,7 +43,7 @@ export const Listings = () => {
           <ListingsItems items={listings} />
         ) : (
           <div className="container">
-            <p>Идёт загрузка объявлений, нужно подождать...</p>
+            <p role="loader">Идёт загрузка объявлений, нужно подождать...</p>
           </div>
         )}
       </div>

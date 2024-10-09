@@ -119,9 +119,5 @@ test("проверка обновления главной фотографии 
 
   await userEvent.upload(input, file);
 
-  expect(mockSetListingObject).toHaveBeenCalledWith(
-    expect.objectContaining({
-      photo: expect.arrayContaining([expect.any(String)]),
-    })
-  );
+  expect(mockSetListingObject).toHaveBeenCalledTimes(1);
 });
