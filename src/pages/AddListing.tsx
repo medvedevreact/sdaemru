@@ -6,6 +6,7 @@ import { AutoItem } from "../types";
 import { HouseItem } from "../types";
 import { addListing } from "../store/listingsSlice";
 import { useAppDispatch } from "../store";
+import CustomButton from "../ui/Button/CustomButton";
 
 type FormFields = {
   appartments: AppartmentItem;
@@ -188,9 +189,10 @@ export const AddListing = () => {
               thirdPhotoRef={thirdPhotoRef}
               fourthPhotoRef={fourthPhotoRef}
             />
-            <button className="addListingBtn" onClick={handleClick}>
-              Добавить Объявление
-            </button>
+
+            <CustomButton onClick={handleClick} size={"medium"}>
+              Добавить объявление
+            </CustomButton>
             {showMessage && (
               <p className="addListingNotCompleted">
                 Заполните все необходимые поля

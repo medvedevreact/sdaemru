@@ -1,0 +1,60 @@
+.customButton {
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #9d94ff, #6b50e9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.customButtonSizesmall {
+  padding: 10px 20px;
+}
+
+.customButtonSizemedium {
+  padding: 15px 10px;
+}
+
+.customButtonSizelarge {
+  padding: 20px 30px;
+}
+
+/* Media queries for adaptive design */
+@media (max-width: 768px) {
+  .customButton {
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+
+  .customButtonSizesmall {
+    padding: 8px 16px;
+  }
+
+  .customButtonSizemedium {
+    padding: 12px 8px;
+  }
+
+  .customButtonSizelarge {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customButton {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .customButtonSizesmall {
+    padding: 6px 12px;
+  }
+
+  .customButtonSizemedium {
+    padding: 10px 14px;
+  }
+
+  .customButtonSizelarge {
+    padding: 12px 18px;
+  }
+}

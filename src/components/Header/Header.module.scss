@@ -41,26 +41,6 @@ header {
       font-size: 20px;
     }
   }
-
-  button {
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 15px;
-    border: none;
-    font-size: 18px;
-    color: white;
-    background: linear-gradient(90deg, #9d94ff, #6b50e9);
-    border-radius: 18px;
-    transition: 0.3s all ease;
-    cursor: pointer;
-    @media (max-width: 1060px) {
-      font-size: 16px;
-    }
-    @media (max-width: 700px) {
-      font-size: 12px;
-      padding: 10px;
-    }
-  }
 }
 .list {
   display: flex;
@@ -82,7 +62,12 @@ header {
   }
 }
 .burgerMenu {
+  border-radius: 30%;
+  padding: 8px;
+  border: none;
   display: none;
+  background-color: #6b50e9;
+  color: white;
   @media (max-width: 860px) {
     display: block;
   }

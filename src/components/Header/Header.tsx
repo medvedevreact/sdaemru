@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import { useNavigate } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
+import CustomButton from "../../ui/Button/CustomButton";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,9 +64,15 @@ export const Header: React.FC = () => {
           Авто
         </li>
       </ul>
-      <button onClick={() => navigate("/addListing")}>
-        + Разместить объявление
-      </button>
+
+      <CustomButton
+        size="large"
+        onClick={() => {
+          navigate("/addListing");
+        }}
+      >
+        + Разместить Объявление
+      </CustomButton>
       <button
         className={styles.burgerMenu}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
